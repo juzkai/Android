@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="back_text">返回</string>
+    <string name="post">提交</string>
+    <string name="phoneRequired">请输入手机号码</string>
+</resources>

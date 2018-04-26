@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mTitleView"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:background="@color/colorWhite"
+    android:gravity="center"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp">
+
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/mTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="标题栏"
+            android:textColor="@color/color24"
+            android:textSize="21sp" />
+
+        <Button
+            android:id="@+id/mTitleLeft"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:drawableLeft="@drawable/arrow_back"
+            android:ellipsize="marquee"
+            android:gravity="left|center"
+            android:onClick="onClick"
+            android:singleLine="true"
+            android:text="返回"
+            android:textColor="@color/color24"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/mTitleRight"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="提交"
+            android:textColor="@color/colorFe"
+            android:textSize="18sp"
+            android:visibility="visible" />
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>

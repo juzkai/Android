@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="textView">
+        <item name="android:shadowRadius">3.0</item>
+        <item name="android:shadowDy">10.0</item>
+        <item name="android:shadowDx">10.0</item>
+        <item name="android:shadowColor">@color/colorPrimaryDark</item>
+    </style>
+    <!-- 内容区域布局 -->
+    <style name="container">
+        <item name="android:background">@color/colorEf</item>
+        <item name="android:textColor">@color/color24</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_marginTop">46dp</item>
+        <item name="android:selectable">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <!-- EditText样式 -->
+    <style name="inputCommon">
+        <item name="android:textColor">@color/color24</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/color66</item>
+        <item name="android:selectAllOnFocus">true</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="textCommon">
+        <item name="android:textColor">@color/color24</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+</resources>

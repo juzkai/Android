@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/layout_title"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/container"
+        android:gravity="center"
+        android:background="#8fffad">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textOne"
+            android:gravity="center"
+            android:text="TextView"
+            android:textStyle="bold|italic"
+            style="@style/textView"
+            android:textColor="#fe6400"
+            android:textSize="35sp"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Test3Activity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            style="@style/container"
+            android:orientation="vertical">
+
+            <EditText
+                android:hint="@string/phoneRequired"
+                android:inputType="phone"
+                android:maxLength="11"
+                style="@style/inputCommon"/>
+
+            <EditText
+                android:inputType="text"
+                android:hint="请输入text"
+                style="@style/inputCommon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择（单选框）"
+                android:textColor="@color/color66"
+                android:layout_margin="20dp"/>
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="20dp">
+                <!-- 每个RadioButton 需要定义一个id 不然单选功能失效 -->
+                <RadioButton
+                    android:id="@+id/radioA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A"
+                    android:textColor="@color/color24"
+                    android:checked="true"/>
+                <RadioButton
+                    android:id="@+id/radioB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B"
+                    android:textColor="@color/color24" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择（复选框）"
+                android:textColor="@color/color66"
+                android:layout_margin="20dp"/>
+            <CheckBox
+                android:id="@+id/banana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color24"
+                android:layout_marginLeft="20dp"
+                android:text="香蕉"/>
+            <CheckBox
+                android:id="@+id/apple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color24"
+                android:layout_marginLeft="20dp"
+                android:text="苹果"/>
+            <CheckBox
+                android:id="@+id/orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color24"
+                android:layout_marginLeft="20dp"
+                android:text="橘子"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开关按钮ToggleButton和Switch"
+                android:textColor="@color/color66"
+                android:layout_margin="20dp"/>
+            <ToggleButton
+                android:id="@+id/tbnView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"/>
+            <Switch
+                android:id="@+id/switchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumb="@drawable/thumb_select"
+                android:track="@drawable/track_select"
+                android:layout_marginLeft="30dp"
+                android:textOn="on"
+                android:textOff="off"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进度条ProgressBar"
+                android:textColor="@color/color66"
+                android:layout_margin="20dp"/>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                style="@style/Widget.AppCompat.ProgressBar"/>
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:progress="33"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/img_test"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/img_test" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/img_test"/>
+
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/layout_title" />
+</android.support.constraint.ConstraintLayout>
