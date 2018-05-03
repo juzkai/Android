@@ -5,70 +5,109 @@
 
     <include layout="@layout/layout_title" />
 
-    <LinearLayout
-        android:id="@+id/LinerLayout1"
-        style="@style/container"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/textView1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#fe4800"
-            android:gravity="center"
-            android:onClick="openOne"
-            android:text="one"
-            android:textColor="#fff"
-            android:textSize="25dp" />
+            android:layout_height="match_parent"
+            style="@style/container"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="#fff" />
+            <LinearLayout
+                android:id="@+id/LinerLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#cc640f"
-            android:gravity="center"
-            android:onClick="openTwo"
-            android:text="two"
-            android:textColor="#fff"
-            android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="#fe4800"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="one"
+                    android:textColor="#fff"
+                    android:textSize="25dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="#fff" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#fff" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#d69d0c"
-            android:gravity="center"
-            android:onClick="openThree"
-            android:text="three"
-            android:textColor="#fff"
-            android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="#cc640f"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="two"
+                    android:textColor="#fff"
+                    android:textSize="25dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="#fff" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#fff" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#b6ad09"
-            android:gravity="center"
-            android:text="four"
-            android:textColor="#fff"
-            android:textSize="25dp" />
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="#d69d0c"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="three"
+                    android:textColor="#fff"
+                    android:textSize="25dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#fff" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="#b6ad09"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="four"
+                    android:textColor="#fff"
+                    android:textSize="25dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#fff" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="#48b609"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="five"
+                    android:textColor="#fff"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

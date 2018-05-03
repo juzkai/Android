@@ -4,144 +4,165 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Test3Activity"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    tools:context=".Test3Activity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
         <LinearLayout
-            style="@style/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
-                android:hint="@string/phoneRequired"
-                android:inputType="phone"
-                android:maxLength="11"
-                style="@style/inputCommon"/>
+            <LinearLayout
+                style="@style/container"
+                android:orientation="vertical">
 
-            <EditText
-                android:inputType="text"
-                android:hint="请输入text"
-                style="@style/inputCommon"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="请选择（单选框）"
-                android:textColor="@color/color66"
-                android:layout_margin="20dp"/>
-            <RadioGroup
-                android:id="@+id/radioGroup1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="20dp"
-                android:layout_marginBottom="20dp">
-                <!-- 每个RadioButton 需要定义一个id 不然单选功能失效 -->
-                <RadioButton
-                    android:id="@+id/radioA"
+                <EditText
+                    style="@style/inputCommon"
+                    android:hint="@string/phoneRequired"
+                    android:inputType="phone"
+                    android:maxLength="11" />
+
+                <EditText
+                    style="@style/inputCommon"
+                    android:hint="请输入text"
+                    android:inputType="text" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="A"
-                    android:textColor="@color/color24"
-                    android:checked="true"/>
-                <RadioButton
-                    android:id="@+id/radioB"
+                    android:layout_margin="20dp"
+                    android:text="自定义圆形进度条"
+                    android:textColor="@color/color66" />
+
+                <com.example.myfirstapp.CirclePgBar
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="B"
+                    android:layout_margin="20dp"
+                    android:text="请选择（单选框）"
+                    android:textColor="@color/color66" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+                    <!-- 每个RadioButton 需要定义一个id 不然单选功能失效 -->
+                    <RadioButton
+                        android:id="@+id/radioA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="A"
+                        android:textColor="@color/color24" />
+
+                    <RadioButton
+                        android:id="@+id/radioB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        android:textColor="@color/color24" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="请选择（复选框）"
+                    android:textColor="@color/color66" />
+
+                <CheckBox
+                    android:id="@+id/banana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="香蕉"
                     android:textColor="@color/color24" />
-            </RadioGroup>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="请选择（复选框）"
-                android:textColor="@color/color66"
-                android:layout_margin="20dp"/>
-            <CheckBox
-                android:id="@+id/banana"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/color24"
-                android:layout_marginLeft="20dp"
-                android:text="香蕉"/>
-            <CheckBox
-                android:id="@+id/apple"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/color24"
-                android:layout_marginLeft="20dp"
-                android:text="苹果"/>
-            <CheckBox
-                android:id="@+id/orange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/color24"
-                android:layout_marginLeft="20dp"
-                android:text="橘子"/>
+                <CheckBox
+                    android:id="@+id/apple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="苹果"
+                    android:textColor="@color/color24" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="开关按钮ToggleButton和Switch"
-                android:textColor="@color/color66"
-                android:layout_margin="20dp"/>
-            <ToggleButton
-                android:id="@+id/tbnView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"/>
-            <Switch
-                android:id="@+id/switchView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:thumb="@drawable/thumb_select"
-                android:track="@drawable/track_select"
-                android:layout_marginLeft="30dp"
-                android:textOn="on"
-                android:textOff="off"/>
+                <CheckBox
+                    android:id="@+id/orange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="橘子"
+                    android:textColor="@color/color24" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="进度条ProgressBar"
-                android:textColor="@color/color66"
-                android:layout_margin="20dp"/>
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                style="@style/Widget.AppCompat.ProgressBar"/>
-            <ProgressBar
-                android:id="@+id/progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:max="100"
-                android:progress="33"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="开关按钮ToggleButton和Switch"
+                    android:textColor="@color/color66" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/img_test"
-                android:scaleType="centerCrop"/>
+                <ToggleButton
+                    android:id="@+id/tbnView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/img_test" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/img_test"/>
+                <Switch
+                    android:id="@+id/switchView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:textOff="off"
+                    android:textOn="on"
+                    android:thumb="@drawable/thumb_select"
+                    android:track="@drawable/track_select" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="进度条ProgressBar"
+                    android:textColor="@color/color66" />
+
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp" />
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:max="100"
+                    android:progress="33" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_test" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <include layout="@layout/layout_title" />
 </android.support.constraint.ConstraintLayout>

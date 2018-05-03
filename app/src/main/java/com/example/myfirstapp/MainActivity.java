@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     private  TextView mTitleTextView;
     private Button mTitleLeft;
@@ -41,16 +41,28 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    public void openOne(View view) {
-        Intent intent = new Intent(this, Test1Activity.class);
-        startActivity(intent);
-    }
-    public void openTwo(View view) {
-        Intent intent = new Intent(this, Test2Activity.class);
-        startActivity(intent);
-    }
-    public void openThree(View view) {
-        Intent intent = new Intent(this, Test3Activity.class);
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        Intent intent = null;
+        switch (id) {
+            case R.id.textView1:
+                intent = new Intent(this, Test1Activity.class);
+                break;
+            case R.id.textView2:
+                intent = new Intent(this, Test2Activity.class);
+                break;
+            case R.id.textView3:
+                intent = new Intent(this, Test3Activity.class);
+                break;
+            case R.id.textView4:
+                intent = new Intent(this, Test4Activity.class);
+                break;
+            case R.id.textView5:
+                intent = new Intent(this, Test5Activity.class);
+            default: break;
+        }
         startActivity(intent);
     }
 }
