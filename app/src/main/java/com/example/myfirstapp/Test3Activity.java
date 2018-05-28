@@ -15,7 +15,6 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class Test3Activity extends AppCompatActivity implements View.OnClickListener,CompoundButton.OnCheckedChangeListener{
-    private TextView mTitleTextView;
     private Dialog dialog = new Dialog();
     private CheckBox checkBox1;
     private CheckBox checkBox2;
@@ -32,8 +31,6 @@ public class Test3Activity extends AppCompatActivity implements View.OnClickList
      *  初始化
      */
     protected void init() {
-        mTitleTextView = findViewById(R.id.mTitleTextView);
-        mTitleTextView.setText("test3");
 
         checkBox1 = (CheckBox)findViewById(R.id.banana);
         checkBox2 = (CheckBox)findViewById(R.id.apple);
@@ -82,9 +79,6 @@ public class Test3Activity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
-            case R.id.mTitleLeft:
-                finish();
-                break;
             case R.id.mTitleRight:
                 postData();
             default: break;

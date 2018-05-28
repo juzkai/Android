@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
+<LinearLayout
+    style="@style/wrap"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/layout_title"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/container"
-        android:gravity="center"
-        android:background="#8fffad">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/textOne"
-            android:gravity="center"
-            android:text="TextView"
-            android:textStyle="bold|italic"
-            style="@style/textView"
-            android:textColor="#fe6400"
-            android:textSize="35sp"/>
-    </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <com.example.myfirstapp.TitleBarActivity
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/titleBar"
+        app:left_btn_visible="true"
+        app:left_btn_text="返回"
+        app:title_text="test2" />
+
+    <ScrollView
+        style="@style/container">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择段位"
+                android:padding="10dp"
+                android:background="@color/color66"
+                android:textColor="@color/colorWhite"
+                android:layout_centerHorizontal="true"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:spinnerMode="dialog"
+                android:alpha="0"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:popupBackground="@color/color29"
+                android:entries="@array/heroData" />
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

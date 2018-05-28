@@ -5,4 +5,17 @@
     <string name="back_text">返回</string>
     <string name="post">提交</string>
     <string name="phoneRequired">请输入手机号码</string>
+    <string-array name="heroData">
+        <item>最强王者</item>
+        <item>超凡大师</item>
+        <item>璀璨钻石</item>
+        <item>华贵铂金</item>
+        <item>荣耀黄金</item>
+        <item>不屈白银</item>
+        <item>英勇青铜</item>
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

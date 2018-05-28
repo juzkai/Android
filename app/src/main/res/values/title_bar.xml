@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBarActivity">
+        <!-- 左边按钮是否可见 -->
+        <attr name="left_btn_visible" format="boolean"/>
+        <!-- 左边按钮文字 -->
+        <attr name="left_btn_text" format="string"/>
+
+        <!-- 顶部栏文字 -->
+        <attr name="title_text" format="string"/>
+        <!-- 顶部栏文字颜色 -->
+        <attr name="title_text_color" format="color"/>
+
+        <!-- 右边按钮是否可见 -->
+        <attr name="right_btn_visible" format="boolean"/>
+        <!-- 右边按钮文字 -->
+        <attr name="right_btn_text" format="string"/>
+
+        <!-- 顶部栏背景色 -->
+        <attr name="title_bar_bgc" format="color"/>
+    </declare-styleable>
+</resources>

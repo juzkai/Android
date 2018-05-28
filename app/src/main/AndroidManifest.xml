@@ -36,7 +36,10 @@
         <activity android:name=".TitleBarActivity" />
         <activity android:name=".Test3Activity" />
         <activity android:name=".Test4Activity" />
-        <activity android:name=".Test5Activity"></activity>
+        <activity android:name=".Test5Activity" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"></activity>
     </application>
 
 </manifest>

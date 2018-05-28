@@ -4,22 +4,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.example.myfirstapp.base.MyAdapter;
+import com.example.myfirstapp.entity.App;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Test5Activity extends AppCompatActivity implements View.OnClickListener,ListView.OnItemClickListener{
-    private TextView mTitleTextView;
     private Dialog dialog;
     private String[] names = new String[]{"黑翼之巢", "熔火之心", "永恒之井", "冰冠堡垒"};
     private String[] says = new String[]{"黑翼之巢25人团队副本", "熔火之心25人团队副本", "永恒之井25人团队副本", "冰冠堡垒25人团队副本"};
     private int[] imgIds = new int[]{R.mipmap.list_item_img1, R.mipmap.list_item_img1, R.mipmap.list_item_img1, R.mipmap.list_item_img1};
+
+//    private ListView list_book;
+    private ListView list_app;
+
+    private MyAdapter<App> myAdapter1 = null;
+//    private MyAdapter<Book> myAdapter2 = null;
+
+    private List<App> mData1 = null;
+//    private List<Book> mData2 = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,22 +37,25 @@ public class Test5Activity extends AppCompatActivity implements View.OnClickList
 
     private void init() {
         dialog = new Dialog();
-        mTitleTextView = (TextView)findViewById(R.id.mTitleTextView);
-        mTitleTextView.setText("Test5");
 
-        List<Map<String, Object>> listItem = new ArrayList<Map<String, Object>>();
-        for (int i = 0; i < names.length; i++) {
-            Map<String, Object> showItem = new HashMap<String, Object>();
-            showItem.put("icon", imgIds[i]);
-            showItem.put("name", names[i]);
-            showItem.put("says", says[i]);
-            listItem.add(showItem);
+        list_app = (ListView)findViewById(R.id.list_item);
+        mData1 = new ArrayList<App>();
+
+        for(int i = 0; i < names.length; i++) {
+            App app = new App(imgIds[i], names[i], says[i]);
+            mData1.add(app);
         }
 
-        SimpleAdapter simpleAdapter = new SimpleAdapter(getApplicationContext(), listItem, R.layout.list_item_icon, new String[]{"icon", "name", "says"}, new int[]{R.id.imgIcon, R.id.name, R.id.says});
-        ListView listView = (ListView)findViewById(R.id.list_item);
-        listView.setAdapter(simpleAdapter);
-        listView.setOnItemClickListener(this);
+        myAdapter1 = new MyAdapter<App>((ArrayList)mData1, R.layout.list_item_icon) {
+            @Override
+            public void bindView(ViewHolder holder, App obj) {
+                holder.setImageResource(R.id.imgIcon, obj.getaIcon());
+                holder.setText(R.id.name, obj.getaName());
+                holder.setText(R.id.says, obj.getSubName());
+            }
+        };
+        list_app.setOnItemClickListener(this);
+        list_app.setAdapter(myAdapter1);
     }
 
     @Override

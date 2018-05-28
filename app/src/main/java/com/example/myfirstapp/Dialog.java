@@ -1,13 +1,17 @@
 package com.example.myfirstapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Dialog {
     private Toast toast = null;
-    private TextView textView;
+    private AlertDialog alertDialog = null;
+    private AlertDialog.Builder builder = null;
 
     /**
      * toast框
@@ -16,10 +20,11 @@ public class Dialog {
      */
     public void showToast(Context context, String str) {
 
-        textView = (TextView) new TextView(context);
-        textView.setBackgroundResource(R.color.color29); // 背景颜色
+        TextView textView = (TextView) new TextView(context);
+        textView.setBackgroundResource(R.drawable.toast_track); // 背景颜色
         textView.setText(str); // 内容
         textView.setTextColor(context.getResources().getColor(R.color.colorWhite)); // 字体颜色
+        textView.setGravity(Gravity.CENTER);
         textView.setTextSize(16); // 字体大小
         textView.setPadding(50,30,50,30); // 内边距
         textView.setAlpha((float) 0.80); // 透明度
@@ -31,4 +36,5 @@ public class Dialog {
         toast.setView(textView);
         toast.show();
     }
+
 }

@@ -6,33 +6,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Test2Activity extends AppCompatActivity implements View.OnClickListener{
-    private TextView mTitleTextView;
+public class Test2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
-        init();
-    }
-    /**
-     *  初始化
-     */
-    protected void init() {
-        mTitleTextView = findViewById(R.id.mTitleTextView);
-        mTitleTextView.setText("test2");
-    }
-
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        switch (id) {
-            case R.id.mTitleLeft:
-                finish();
-                break;
-            case R.id.mTitleRight:
-                Toast.makeText(this, "提交数据", Toast.LENGTH_SHORT).show();
-            default: break;
-        }
     }
 }

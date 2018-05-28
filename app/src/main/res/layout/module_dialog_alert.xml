@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/module_comoon_dialog_alert"
+    android:paddingBottom="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:text="提示"
+        android:textColor="@color/color24"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorEf"
+        android:layout_height="1px"/>
+
+    <TextView
+        android:id="@+id/contentMsg"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="内容"
+        android:textColor="@color/color66"
+        android:textSize="16sp"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorEf"
+        android:layout_height="1px"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mNegativeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="取消"
+            android:background="@color/colorWhite"
+            android:textColor="@color/color24"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/colorEf"/>
+
+        <Button
+            android:id="@+id/mPositiveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="确定"
+            android:textSize="16sp"
+            android:background="@color/colorWhite"
+            android:textColor="@color/colorFe"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

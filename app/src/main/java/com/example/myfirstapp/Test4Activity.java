@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 public class Test4Activity extends AppCompatActivity implements View.OnClickListener, DatePicker.OnDateChangedListener, TimePicker.OnTimeChangedListener{
-    private TextView mTitleTextView;
     private Chronometer chronometer;
     private Dialog dialog = new Dialog();
     private DatePicker calendarDate;
@@ -28,8 +27,6 @@ public class Test4Activity extends AppCompatActivity implements View.OnClickList
 
     @TargetApi(Build.VERSION_CODES.O)
     private void init() {
-        mTitleTextView = (TextView)findViewById(R.id.mTitleTextView);
-        mTitleTextView.setText("test4");
 
         chronometer = (Chronometer)findViewById(R.id.chronometer);
 
@@ -48,9 +45,6 @@ public class Test4Activity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
-            case R.id.mTitleLeft:
-                finish();
-                break;
             case R.id.start:
                 chronometer.start();
                 break;

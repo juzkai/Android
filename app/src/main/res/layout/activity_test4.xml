@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/wrap"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".Test4Activity">
 
+    <com.example.myfirstapp.TitleBarActivity
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/titleBar"
+        app:left_btn_visible="true"
+        app:left_btn_text="返回"
+        app:title_text="test4" />
+
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/container"
         android:fillViewport="true">
 
         <LinearLayout
-            style="@style/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
@@ -119,6 +125,5 @@
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/layout_title" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

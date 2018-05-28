@@ -1,113 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mContent"
+    style="@style/wrap"
+    tools:context=".MainActivity">
 
-    <include layout="@layout/layout_title" />
+    <com.example.myfirstapp.TitleBarActivity
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/title_bar"
+        style="@style/titleBar"
+        app:right_btn_text="@string/post"
+        app:right_btn_visible="true"
+        app:title_text="首页" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/container"
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            style="@style/container"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/LinerLayout1"
+            <GridView
+                android:id="@+id/grid_photo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="#fe4800"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:onClick="onClick"
-                    android:text="one"
-                    android:textColor="#fff"
-                    android:textSize="25dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="#fff" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="#cc640f"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:onClick="onClick"
-                    android:text="two"
-                    android:textColor="#fff"
-                    android:textSize="25dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="#fff" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="#d69d0c"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:onClick="onClick"
-                    android:text="three"
-                    android:textColor="#fff"
-                    android:textSize="25dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="#fff" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="#b6ad09"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:onClick="onClick"
-                    android:text="four"
-                    android:textColor="#fff"
-                    android:textSize="25dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="#fff" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="#48b609"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:onClick="onClick"
-                    android:text="five"
-                    android:textColor="#fff"
-                    android:textSize="25dp" />
-
-            </LinearLayout>
+                android:background="@color/color66"
+                android:horizontalSpacing="1px"
+                android:numColumns="3"
+                android:verticalSpacing="1px" />
         </LinearLayout>
     </ScrollView>
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
