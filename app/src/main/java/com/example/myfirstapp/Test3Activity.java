@@ -1,17 +1,13 @@
 package com.example.myfirstapp;
 
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class Test3Activity extends AppCompatActivity implements View.OnClickListener,CompoundButton.OnCheckedChangeListener{
@@ -21,17 +17,25 @@ public class Test3Activity extends AppCompatActivity implements View.OnClickList
     private CheckBox checkBox3;
     private ToggleButton toggleButton;
     private Switch aSwitch;
+    private TitleBarActivity mTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test3);
+        mTitle = (TitleBarActivity)findViewById(R.id.title_bar);
+        mTitle.setOnRightBtnClick(new TitleBarActivity.onRightBtnClick() {
+            @Override
+            public void onRightBtnClick() {
+                postData();
+            }
+        });
         init();
     }
     /**
      *  初始化
      */
     protected void init() {
-
         checkBox1 = (CheckBox)findViewById(R.id.banana);
         checkBox2 = (CheckBox)findViewById(R.id.apple);
         checkBox3 = (CheckBox)findViewById(R.id.orange);

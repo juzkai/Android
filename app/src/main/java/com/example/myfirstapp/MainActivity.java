@@ -9,10 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.myfirstapp.base.MyAdapter;
 import com.example.myfirstapp.entity.Icon;
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mContext = MainActivity.this;
         grid_photo = (GridView)findViewById(R.id.grid_photo);
         mData = new ArrayList<Icon>();
-        for (int i = 1; i < 19; i++) {
+        for (int i = 1; i < 61; i++) {
             Icon icon = new Icon(R.mipmap.list_item_img1, "item" + i);
             mData.add(icon);
         }

@@ -10,8 +10,11 @@
     <com.example.myfirstapp.TitleBarActivity
         xmlns:app="http://schemas.android.com/apk/res-auto"
         style="@style/titleBar"
+        android:id="@+id/title_bar"
         app:left_btn_visible="true"
         app:left_btn_text="返回"
+        app:right_btn_visible="true"
+        app:right_btn_text="@string/post"
         app:title_text="test3" />
 
     <ScrollView

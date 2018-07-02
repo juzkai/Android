@@ -12,30 +12,53 @@
 
     <ScrollView
         style="@style/container">
-        <RelativeLayout
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:columnCount="4"
+            android:rowCount="6">
 
-            <TextView
+            <Button
+                android:id="@+id/telCall"
+                android:onClick="onClick"
+                android:layout_width="wrap_content"                android:layout_height="wrap_content"
+                style="@style/btnCommon"
+                android:text="拨打电话"/>
+            <Button
+                android:id="@+id/actionView"
+                android:onClick="onClick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="请选择段位"
-                android:padding="10dp"
-                android:background="@color/color66"
-                android:textColor="@color/colorWhite"
-                android:layout_centerHorizontal="true"
-                android:textSize="18sp"/>
-
-            <Spinner
+                style="@style/btnCommon"
+                android:text="打开浏览器"/>
+            <Button
+                android:id="@+id/googleMap"
+                android:onClick="onClick"
                 android:layout_width="wrap_content"
-                android:layout_height="64dp"
-                android:spinnerMode="dialog"
-                android:alpha="0"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="-10dp"
-                android:popupBackground="@color/color29"
-                android:entries="@array/heroData" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                style="@style/btnCommon"
+                android:text="谷歌地图"/>
+            <Button
+                android:onClick="onClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/btnCommon"
+                android:text="拨打电话"/>
+            <Button
+                android:onClick="onClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/btnCommon"
+                android:text="拨打电话"/>
+            <Button
+                android:onClick="onClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/btnCommon"
+                android:text="拨打电话"/>
+
+        </GridLayout>
     </ScrollView>
 
 </LinearLayout>

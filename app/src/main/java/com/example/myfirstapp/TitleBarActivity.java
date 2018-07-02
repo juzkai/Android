@@ -5,10 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -70,7 +67,6 @@ public class TitleBarActivity extends LinearLayout {
 
         setTitleText(mTitleText);
         setTitleTextColor(mTitleTextColor);
-        Log.i(TAG, "initView: ------------" + isLeftBtnVisible + mLeftBtnText);
         setLeftBtnVisible(isLeftBtnVisible);
         if(mLeftBtnText != null) {
             setLeftBtnText(mLeftBtnText);
@@ -178,13 +174,13 @@ public class TitleBarActivity extends LinearLayout {
      *  左边按钮点击回调
      */
     public interface onLeftBtnClick{
-        public void onLeftBtnClick();
+        void onLeftBtnClick();
     }
 
     /**
      *  右边按钮点击回调
      */
     public interface onRightBtnClick{
-        public void onRightBtnClick();
+        void onRightBtnClick();
     }
 }
