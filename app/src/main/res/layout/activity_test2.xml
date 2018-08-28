@@ -22,42 +22,27 @@
             <Button
                 android:id="@+id/telCall"
                 android:onClick="onClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/btnCommon"
+                android:layout_columnSpan="1"
                 android:text="拨打电话"/>
             <Button
                 android:id="@+id/actionView"
                 android:onClick="onClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/btnCommon"
+                android:layout_columnSpan="1"
                 android:text="打开浏览器"/>
             <Button
                 android:id="@+id/googleMap"
                 android:onClick="onClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/btnCommon"
+                android:layout_columnSpan="1"
                 android:text="谷歌地图"/>
             <Button
-                android:onClick="onClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/btnCommon"
-                android:text="拨打电话"/>
+                android:id="@+id/testServiceStart"
+                android:layout_columnSpan="2"
+                android:text="开始服务"/>
+
             <Button
-                android:onClick="onClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/btnCommon"
-                android:text="拨打电话"/>
-            <Button
-                android:onClick="onClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/btnCommon"
-                android:text="拨打电话"/>
+                android:id="@+id/testServiceStop"
+                android:layout_columnSpan="2"
+                android:text="停止服务"/>
 
         </GridLayout>
     </ScrollView>

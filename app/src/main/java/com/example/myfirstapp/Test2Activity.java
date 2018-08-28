@@ -6,16 +6,21 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Test2Activity extends AppCompatActivity implements View.OnClickListener{
     private Dialog dialog;
     private Integer num;
+    private Button serviceStart;
+    private Button serviceStop;
+    private Test2Activity context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
+        context = Test2Activity.this;
         dialog = new Dialog();
         // 在 onCreate中恢复数据的一定要先判断 savedInstanceState不为null
 //        if (savedInstanceState != null) {
@@ -24,7 +29,24 @@ public class Test2Activity extends AppCompatActivity implements View.OnClickList
 //                dialog.showToast(Test2Activity.this, num.toString());
 //            }
 //        }
-
+        serviceStart = (Button) findViewById(R.id.testServiceStart);
+        serviceStop = (Button) findViewById(R.id.testServiceStop);
+        final Intent intent = new Intent();
+        intent.setAction("com.example.myfirstapp.service.TEST_SERVICE");
+        // 5.0以后 service服务必须采用显示方式启动 方法一：设置Action和packageName 方法二：将隐士启动转化成显示启动
+        intent.setPackage(getPackageName());
+        serviceStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startService(intent);
+            }
+        });
+        serviceStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.stopService(intent);
+            }
+        });
     }
 
     /**
@@ -64,7 +86,7 @@ public class Test2Activity extends AppCompatActivity implements View.OnClickList
         Uri uri;
         switch (id) {
             case R.id.telCall: // 拨打电话
-                uri = Uri.parse("tel:18262283481");
+                uri = Uri.parse("tel:15275128692");
                 intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
                 break;
