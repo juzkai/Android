@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -16,6 +17,7 @@ import com.example.myfirstapp.base.MyAdapter;
 import com.example.myfirstapp.entity.Icon;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BaseAdapter mAdapter;
     private ArrayList<Icon> mData = null;
 
-    private Dialog dialog = new Dialog();
+    private Dialog dialog;
 
     private Intent intent = null;
 
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AlertDialog.Builder builder;
     private AlertDialog alertDialog;
 
-    private ArrayList choice;
+    private ArrayList<Integer> choice;
 
     private String singles;
 
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mContext = MainActivity.this;
         grid_photo = (GridView)findViewById(R.id.grid_photo);
         mData = new ArrayList<Icon>();
-        for (int i = 1; i < 61; i++) {
+        for (int i = 1; i < 10; i++) {
             Icon icon = new Icon(R.mipmap.list_item_img1, "item" + i);
             mData.add(icon);
         }
@@ -99,15 +101,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent = new Intent(mContext, Test5Activity.class);
                         break;
                     case 5:
-                        intent = null;
-                        flag = false;
+                        intent = new Intent(mContext, WebviewEntry.class);
                         break;
                     case 6:
                         intent = null;
                         flag = false;
                         builder = new AlertDialog.Builder(mContext);
                         builder.setCancelable(false);
-                        builder.setTitle("选择段位");
                         builder.setItems(R.array.heroData, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -143,7 +143,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                dialog.showToast(mContext, choice.toString());
+                                String choices = "";
+                                for (int k = 0; k < choice.size(); k++) {
+                                    choices += strings[choice.get(k)] + ",";
+                                }
+                                Log.d("item8:", choices);
+                                dialog.showToast(mContext, "选择了" + choices);
                             }
                         });
                         alertDialog = builder.create();

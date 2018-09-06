@@ -7,7 +7,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <!-- 使用webview加载网页出现NET::ERR_CACHE_MISS的错误 加入联网的权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +20,7 @@
         <!-- 配置service组件 同是配置一个action -->
         <service android:name=".TestService">
             <intent-filter>
-                <action android:name="com.example.myfirstapp.service.TEST_SERVICE"/>
+                <action android:name="com.example.myfirstapp.service.TEST_SERVICE" />
             </intent-filter>
         </service>
 
@@ -46,7 +47,8 @@
         <activity android:name=".Test5Activity" />
         <activity
             android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"></activity>
+            android:label="@string/title_activity_main2" />
+        <activity android:name=".WebviewEntry"></activity>
     </application>
 
 </manifest>

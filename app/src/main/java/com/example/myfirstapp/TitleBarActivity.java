@@ -3,6 +3,7 @@ package com.example.myfirstapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -43,7 +44,7 @@ public class TitleBarActivity extends LinearLayout {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.TitleBarActivity);
         /** 标题栏文字、颜色 **/
         mTitleText = typedArray.getString(R.styleable.TitleBarActivity_title_text);
-        mTitleTextColor = typedArray.getColor(R.styleable.TitleBarActivity_title_text_color, getResources().getColor(R.color.color24));
+        mTitleTextColor = typedArray.getColor(R.styleable.TitleBarActivity_title_text_color, getResources().getColor(R.color.colorWhite));
         /** 左边按钮是否可见 **/
         isLeftBtnVisible = typedArray.getBoolean(R.styleable.TitleBarActivity_left_btn_visible, false);
         /** 右边按钮是否可见 **/
@@ -64,7 +65,6 @@ public class TitleBarActivity extends LinearLayout {
         mRightBtn = (Button)barLayoutView.findViewById(R.id.mTitleRight);
         /** 注意这里不能直接用findViewById,因为setContentView之后使用findViewById是在当前layout之下找，当前layout找不到，于是就null了 **/
         mTitle = (TextView)barLayoutView.findViewById(R.id.mTitleText);
-
         setTitleText(mTitleText);
         setTitleTextColor(mTitleTextColor);
         setLeftBtnVisible(isLeftBtnVisible);
