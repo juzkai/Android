@@ -27,6 +27,7 @@ public class WebviewEntry extends AppCompatActivity {
     private Boolean firstInit;
     private HashMap<String, String> webViewData;
     private String webViewEntryData;
+    AndroidInterfaceForJS androidInterfaceForJS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +94,8 @@ public class WebviewEntry extends AppCompatActivity {
                 }
             }
         });
+        androidInterfaceForJS = new AndroidInterfaceForJS(WebviewEntry.this);
+        mWebView.addJavascriptInterface(androidInterfaceForJS, "WebViewApp");
     }
     // 点击返回上一页而不是退出当前WebView
     @Override

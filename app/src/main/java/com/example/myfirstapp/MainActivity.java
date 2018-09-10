@@ -15,6 +15,7 @@ import android.widget.GridView;
 
 import com.example.myfirstapp.base.MyAdapter;
 import com.example.myfirstapp.entity.Icon;
+import com.example.myfirstapp.entity.Item;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mContext = MainActivity.this;
         grid_photo = (GridView)findViewById(R.id.grid_photo);
         mData = new ArrayList<Icon>();
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 13; i++) {
             Icon icon = new Icon(R.mipmap.list_item_img1, "item" + i);
             mData.add(icon);
         }
@@ -181,6 +182,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         });
                         alertDialog = builder.create();
                         alertDialog.show();
+                        break;
+                    case 9:
+                        flag = false;
+                        ActionSheet actionSheet = new ActionSheet(mContext);
+                        actionSheet.addItem(new Item(1, "item3"));
+                        actionSheet.setItemClickListener(new ActionSheet.ItemClickListener() {
+                            @Override
+                            public void onItemClick(int index) {
+                                Log.d("你选择了----", Integer.toString(index));
+                            }
+                        });
+                        actionSheet.show();
                         break;
                     default:
                         flag = false;

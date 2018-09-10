@@ -14,7 +14,7 @@
         android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#17a2b8">
+        android:background="@color/titleBar">
 
         <TextView
             android:id="@+id/mTitleText"

@@ -11,4 +11,5 @@
     <color name="color66">#666666</color>
     <color name="container">#f5f5f5</color>
     <color name="switchOn">#2aa515</color>
+    <color name="titleBar">#17a2b8</color>
 </resources>
