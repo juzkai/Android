@@ -87,7 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@color/color66" />
+                    android:background="@color/colorEf" />
 
                 <DatePicker
                     android:id="@+id/spinnerDate"
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:background="@color/color66"
+                    android:background="@color/colorEf"
                     android:calendarViewShown="false"
                     android:datePickerMode="spinner" />
 
@@ -116,9 +116,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@color/color66"
+                    android:background="@color/colorEf"
                     android:timePickerMode="spinner" />
-
 
 
             </LinearLayout>

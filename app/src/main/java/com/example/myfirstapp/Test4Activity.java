@@ -11,6 +11,8 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.Calendar;
+
 public class Test4Activity extends AppCompatActivity implements View.OnClickListener, DatePicker.OnDateChangedListener, TimePicker.OnTimeChangedListener{
     private Chronometer chronometer;
     private Dialog dialog = new Dialog();
@@ -27,14 +29,16 @@ public class Test4Activity extends AppCompatActivity implements View.OnClickList
 
     @TargetApi(Build.VERSION_CODES.O)
     private void init() {
-
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
         chronometer = (Chronometer)findViewById(R.id.chronometer);
-
         calendarDate = (DatePicker)findViewById(R.id.calendarDate);
+        calendarDate.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), this);
         spinnerDate = (DatePicker)findViewById(R.id.spinnerDate);
-        calendarDate.setOnDateChangedListener(this);
-        spinnerDate.setOnDateChangedListener(this);
-
+        // OPPO上闪退
+//        calendarDate.setOnDateChangedListener(this);
+//        spinnerDate.setOnDateChangedListener(this);
+        spinnerDate.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), this);
         clockTimer = (TimePicker)findViewById(R.id.clockTimer);
         spinnerTimer = (TimePicker)findViewById(R.id.spinnerTimer);
         clockTimer.setOnTimeChangedListener(this);

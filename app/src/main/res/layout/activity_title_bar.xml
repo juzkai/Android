@@ -32,7 +32,7 @@
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:background="@null"
-            android:drawableLeft="@drawable/arrow_back"
+            android:drawableLeft="@drawable/arrow_back_white"
             android:ellipsize="marquee"
             android:gravity="left|center"
             android:onClick="onClick"

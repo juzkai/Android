@@ -44,6 +44,19 @@
                 android:layout_columnSpan="2"
                 android:text="停止服务"/>
 
+            <Button
+                android:id="@+id/backHome"
+                android:layout_columnSpan="2"
+                android:onClick="onClick"
+                android:text="返回HOME界面"/>
+
+            <Button
+                android:id="@+id/openBaiDu"
+                android:layout_columnSpan="1"
+                android:onClick="onClick"
+                android:textAllCaps="false"
+                android:text="BaiDu页面"/>
+
         </GridLayout>
     </ScrollView>
 

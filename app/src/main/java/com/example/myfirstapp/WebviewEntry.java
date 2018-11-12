@@ -28,6 +28,9 @@ public class WebviewEntry extends AppCompatActivity {
     private HashMap<String, String> webViewData;
     private String webViewEntryData;
     AndroidInterfaceForJS androidInterfaceForJS;
+
+    private final String loadUrl = "http://192.168.2.110:8085/index.html";
+//    private final String loadUrl = "https://www.baidu.com/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +53,12 @@ public class WebviewEntry extends AppCompatActivity {
         webSettings.setDatabaseEnabled(true); // 开启DOM database storage 功能
         webSettings.setAppCacheEnabled(true); // 开启Application Caches 功能
         webViewData = new HashMap<String, String>();
-        webViewData.put("token", "e25afb0e1eb81bfd0ba2071eea27b99a");
+        webViewData.put("token", "5102030837eb6f5e7064099007e6b8e9");
         webViewData.put("theme", "my56");
         JSONObject jsonObj = new JSONObject(webViewData);
         webViewEntryData = jsonObj.toString();
         firstInit = true;
-        mWebView.loadUrl("http://192.168.2.110:8086");
+        mWebView.loadUrl(loadUrl);
         // 设置不用自带浏览器打开，直接显示在当前的WebView
         mWebView.setWebViewClient(new WebViewClient() {
             @Override

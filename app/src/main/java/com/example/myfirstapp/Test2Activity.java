@@ -82,7 +82,7 @@ public class Test2Activity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        Intent intent;
+        Intent intent = null;
         Uri uri;
         switch (id) {
             case R.id.telCall: // 拨打电话
@@ -99,6 +99,20 @@ public class Test2Activity extends AppCompatActivity implements View.OnClickList
                 uri = Uri.parse("geo:117.1,36.6");
                 intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
+                break;
+            case R.id.backHome:
+                // 返回HOME界面
+                intent = new Intent();
+                intent.setAction(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(intent);
+                break;
+            case R.id.openBaiDu:
+                intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.baidu.com/"));
+                startActivity(intent);
+                break;
             default: break;
         }
     }
