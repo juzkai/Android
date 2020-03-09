@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -29,7 +30,7 @@ public class WebviewEntry extends AppCompatActivity {
     private String webViewEntryData;
     AndroidInterfaceForJS androidInterfaceForJS;
 
-    private final String loadUrl = "http://192.168.2.110:8085/index.html";
+    private final String loadUrl = "https://tstfin.etcsd.com/finance/hyd_index.jsp";
 //    private final String loadUrl = "https://www.baidu.com/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class WebviewEntry extends AppCompatActivity {
         webSettings.setDatabaseEnabled(true); // 开启DOM database storage 功能
         webSettings.setAppCacheEnabled(true); // 开启Application Caches 功能
         webViewData = new HashMap<String, String>();
-        webViewData.put("token", "5102030837eb6f5e7064099007e6b8e9");
+        webViewData.put("token", "49d829326633c94e15852cb9c4c68e15");
         webViewData.put("theme", "my56");
         JSONObject jsonObj = new JSONObject(webViewData);
         webViewEntryData = jsonObj.toString();
@@ -69,9 +70,9 @@ public class WebviewEntry extends AppCompatActivity {
             // onPageFinished 会执行两次，加个firstInit控制
             @Override
             public void onPageFinished(WebView view, String url) {
+                // onPageFinished会被调用多次
                 if (firstInit) {
                     final int version = Build.VERSION.SDK_INT;
-                    Log.d("向JS传递数据----", webViewEntryData);
                     // evaluateJavascript 在Android 4.4+ 才可使用,所以需要进行版本判定
                     if (version < 18) {
                         view.loadUrl("javascript:mainEntry(" + webViewEntryData +")");
@@ -93,11 +94,12 @@ public class WebviewEntry extends AppCompatActivity {
                     webViewProgress.setProgress(newProgress);
                 } else {
                     // 进度完成，隐藏进度条
-                    webViewProgress.setVisibility(View.INVISIBLE);
+                    // View.INVISIBLE 仍然会占用空间，内容不可见； View.GONE 不会占用空间
+                    webViewProgress.setVisibility(View.GONE);
                 }
             }
         });
-        androidInterfaceForJS = new AndroidInterfaceForJS(WebviewEntry.this);
+        androidInterfaceForJS = new AndroidInterfaceForJS(WebviewEntry.this, mWebView);
         mWebView.addJavascriptInterface(androidInterfaceForJS, "WebViewApp");
     }
     // 点击返回上一页而不是退出当前WebView
@@ -113,11 +115,13 @@ public class WebviewEntry extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         if (mWebView != null) {
-            mWebView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
-            mWebView.clearHistory();
+//            mWebView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
             ((ViewGroup)mWebView.getParent()).removeView(mWebView);
+
+            mWebView.getSettings().setJavaScriptEnabled(false);
+            mWebView.clearHistory();
+            mWebView.removeAllViews();
             mWebView.destroy();
-            mWebView = null;
         }
         super.onDestroy();
     }

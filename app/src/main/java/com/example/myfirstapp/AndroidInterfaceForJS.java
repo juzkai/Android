@@ -2,8 +2,11 @@ package com.example.myfirstapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
 
 import com.example.myfirstapp.entity.Item;
 
@@ -14,8 +17,13 @@ import com.example.myfirstapp.entity.Item;
 public class AndroidInterfaceForJS {
     private Activity activity;
     private Dialog dialog;
+    private WebView webView;
     public AndroidInterfaceForJS(Activity activity) {
         this.activity = activity;
+    }
+    public AndroidInterfaceForJS(Activity activity, WebView webView) {
+        this.activity = activity;
+        this.webView = webView;
     }
 
     /**
@@ -41,5 +49,11 @@ public class AndroidInterfaceForJS {
             }
         });
         actionSheet.show();
+    }
+    @JavascriptInterface
+    public void loadAlipay (String url) {
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        activity.startActivity(intent);
     }
 }

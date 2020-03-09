@@ -26,30 +26,30 @@ public class Test2Activity extends AppCompatActivity implements View.OnClickList
 //        if (savedInstanceState != null) {
 //            num = savedInstanceState.getInt("num");
 //            if(num != null) {
-//                dialog.showToast(Test2Activity.this, num.toString());
-//            }
-//        }
-        serviceStart = (Button) findViewById(R.id.testServiceStart);
-        serviceStop = (Button) findViewById(R.id.testServiceStop);
-        final Intent intent = new Intent();
-        intent.setAction("com.example.myfirstapp.service.TEST_SERVICE");
-        // 5.0以后 service服务必须采用显示方式启动 方法一：设置Action和packageName 方法二：将隐士启动转化成显示启动
-        intent.setPackage(getPackageName());
-        serviceStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                context.startService(intent);
-            }
-        });
-        serviceStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                context.stopService(intent);
-            }
-        });
+     //                dialog.showToast(Test2Activity.this, num.toString());
+     //            }
+     //        }
+     serviceStart = (Button) findViewById(R.id.testServiceStart);
+     serviceStop = (Button) findViewById(R.id.testServiceStop);
+     final Intent intent = new Intent();
+     intent.setAction("com.example.myfirstapp.service.TEST_SERVICE");
+     // 5.0以后 service服务必须采用显示方式启动 方法一：设置Action和packageName 方法二：将隐士启动转化成显示启动
+     intent.setPackage(getPackageName());
+     serviceStart.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+    context.startService(intent);
     }
+    });
+     serviceStop.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+    context.stopService(intent);
+    }
+    });
+     }
 
-    /**
+     /**
      * 用户按下返回键、或者调用了finish()方法销毁activity，则onSaveInstanceState不会被调用
      * onSaveInstanceState在以下情况下会被调用
      * 1、当用户按下HOME键时
